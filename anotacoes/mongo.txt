@@ -42,3 +42,23 @@ Analogia: SELECT * FROM albuns a WHERE a.nome = "Master of Puppets";
 db.albuns.find({"nome": "Master of Puppets"})
 
 db.albuns.findOne({"nome": "Master of Puppets"});
+
+
+Nome Descrição
+$gt:  	Corresponde	a valores que são maiores que o	valor específico na	query.
+$gte: 	Corresponde	a valores que são maiores ou iguais	ao valor específico	na query.
+$in:  	Corresponde	a quaisquer valores	que	existem	em um array específico em uma query.
+$lt:  	Corresponde	a valores que são menores que o valor específico na query.
+$lte:  	Corresponde	a valores que são menores ou iguais	que	o valor	específico na query.
+$ne: 	Corresponde	a todos	os valores que	não	são	iguais ao valor específico na query.
+$nin:  	Corresponde	a valores que não existem em um	array específico da	query.
+
+Exemplo: 
+
+db.albuns.find({"duracao": {"$gt": 1800}});
+
+Equivalente: 
+SELECT	* FROM albuns a WHERE a.duracao	< 1800;
+
+db.albuns.find({"nome": {"$in": ["Master of Puppets", "...And Justice For All"]}});
+
