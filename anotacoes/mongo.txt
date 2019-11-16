@@ -1,0 +1,44 @@
+
+
+// Mostrar todos os data bases 
+show dbs;
+
+Cria um data bases caso nâo tenha e conecta a ele
+use	ligado;
+
+
+Inserir dados (documentos)
+db.albuns.insert(PADRAO_JSON);
+
+Exemplo:
+db.albuns.insert({});
+
+db.albuns.insert({"nome": "...And Justice For All", "data_lancamento": new Date(1988, 7, 25), "duracao": 3929});
+
+db.albuns.insert({"nome": "Peace Sells... but Who's Buying?", "estudio_gravacao": "Music Grinder Studios", "data_lancamento": new Date(1986, 8, 19), "duracao": 3929});
+
+db.albuns.insert({"nome": "Reign in Blood", "data_lancamento": new Date(1986, 9, 7), "duracao": 1738});
+
+db.albuns.insert({"nome": "Among the Living", "Eddie Kramer"});
+
+show collections;
+
+Buscar um arquivo
+
+db.albuns.find({PADRAO_JSON});
+
+Exemplo: 
+
+Busca todos os documentos
+
+
+db.albuns.find({})
+Equivalente: 
+SELECT * FROM albuns a;
+
+Busca por atributo
+
+Analogia: SELECT * FROM albuns a WHERE a.nome = "Master of Puppets";
+db.albuns.find({"nome": "Master of Puppets"})
+
+db.albuns.findOne({"nome": "Master of Puppets"});

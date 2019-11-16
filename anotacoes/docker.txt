@@ -1,0 +1,13 @@
+
+Baixando e rodando o container docker
+
+-p: configurando a porta do sistema operacional ao do container
+
+docker run -p 27017:27017 --name "NOME_CONTAINER" 
+
+Entrando no na linha de comando e digitando comando no mongo
+
+-i: modo interativo 
+-t: agregar o terminal do sistema operacional ao do container
+
+docker exec -it "NOME_CONTAINER" mongo
